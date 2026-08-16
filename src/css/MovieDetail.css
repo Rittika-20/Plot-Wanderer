@@ -1,0 +1,237 @@
+.movie-detail {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  padding-bottom: 3rem;
+}
+
+.detail-backdrop {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center 20%;
+}
+
+.detail-backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), #000 95%);
+}
+
+.back-button {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.back-button:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.detail-content {
+  display: flex;
+  gap: 2.5rem;
+  padding: 0 3rem;
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+}
+
+.detail-poster img {
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.detail-info {
+  flex: 1;
+  padding-top: 100px;
+}
+
+.detail-info h1 {
+  font-family: 'Abril Fatface', serif;
+  font-size: 2.5rem;
+  color: white;
+  margin: 0 0 0.75rem;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 1.25rem;
+  color: #ccc;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.detail-rating {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.detail-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.genre-pill {
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  color: #ff6b6b;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+}
+
+.detail-overview {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #ddd;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+}
+
+.detail-actions {
+  margin-bottom: 2rem;
+}
+
+.favorite-detail-btn {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.favorite-detail-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.favorite-detail-btn.active {
+  background: linear-gradient(135deg, #e50914, #b0060f);
+  border-color: transparent;
+}
+
+.detail-cast h3 {
+  font-family: 'Abril Fatface', serif;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 110px));
+  gap: 1rem;
+}
+
+.cast-member {
+  text-align: center;
+}
+
+.cast-member img,
+.cast-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cast-name {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
+  margin: 0;
+}
+
+.cast-character {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0;
+}
+
+.detail-trailer {
+  padding: 3rem;
+}
+
+.detail-trailer h3 {
+  font-family: 'Abril Fatface', serif;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.trailer-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.trailer-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.detail-loading {
+  color: white;
+  text-align: center;
+  padding: 4rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .detail-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  .detail-poster img {
+    width: 180px;
+  }
+
+  .detail-info {
+    padding-top: 1.5rem;
+  }
+
+  .detail-meta,
+  .detail-genres {
+    justify-content: center;
+  }
+
+  .detail-trailer {
+    padding: 2rem 1.5rem;
+  }
+}

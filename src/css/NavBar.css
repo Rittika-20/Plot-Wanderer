@@ -1,0 +1,109 @@
+.navbar {
+  background-color: #000000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-brand a {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  color: #cb0913 !important;
+  text-decoration: none;
+  transition: text-shadow 0.2s;
+}
+
+.nav-brand a:hover {
+  text-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: white !important;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e50914;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-brand a {
+    font-size: 1.4rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+}
+.user-account {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-name {
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.login-btn,
+.logout-btn {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #e50914, #b0060f);
+  color: white;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(229, 9, 20, 0.4);
+}
+
+.logout-btn {
+  background: rgba(255,255,255,0.08);
+  color: #ccc;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}

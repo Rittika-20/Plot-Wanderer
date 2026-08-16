@@ -1,0 +1,31 @@
+.skeleton-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  padding-bottom: 1rem;
+}
+
+.skeleton-poster {
+  aspect-ratio: 2/3;
+  width: 100%;
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeleton-line {
+  height: 12px;
+  margin: 0.5rem 1rem 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeleton-title { width: 70%; }
+.skeleton-year { width: 40%; }
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
