@@ -20,7 +20,7 @@ function NavBar() {
 
                     {user ? (
                         <div className="user-account">
-                          <span className="user-name">Hi, {user.email}</span>
+                          <span className="user-name">Hi, {user.displayName || user.email}</span>
                           <button className="logout-btn" onClick={logout}>Logout</button>
                         </div>
                     ) : (

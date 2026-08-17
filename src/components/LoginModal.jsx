@@ -4,6 +4,7 @@ import "../css/LoginModal.css";
 
 function LoginModal({ onClose }) {
     const [isSignup, setIsSignup] = useState(false);
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -16,7 +17,7 @@ function LoginModal({ onClose }) {
         setSubmitting(true);
         try {
             if (isSignup) {
-                await signup(email, password);
+                await signup(name, email, password);
                 setError("Account created! Check your email to verify your address.");
             } else {
                 await login(email, password);
@@ -34,6 +35,18 @@ function LoginModal({ onClose }) {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2>{isSignup ? "Sign Up" : "Log In"}</h2>
                 <form onSubmit={handleSubmit}>
+                    {isSignup && (
+                        <input
+                            type="text"
+                            id="signup-name"
+                            name="signup-name"
+                            placeholder="Full name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            autoFocus
+                            required
+                        />
+                    )}
                     <input
                         type="email"
                         id="login-email"
@@ -41,7 +54,7 @@ function LoginModal({ onClose }) {
                         placeholder="Email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        autoFocus
+                        autoFocus={!isSignup}
                         required
                     />
                     <input
@@ -62,7 +75,7 @@ function LoginModal({ onClose }) {
 
                 <p className="modal-toggle">
                     {isSignup ? "Already have an account?" : "New here?"}{" "}
-                    <span onClick={() => { setIsSignup(!isSignup); setError(""); }}>
+                    <span onClick={() => { setIsSignup(!isSignup); setError(""); setName(""); }}>
                         {isSignup ? "Log In" : "Sign Up"}
                     </span>
                 </p>

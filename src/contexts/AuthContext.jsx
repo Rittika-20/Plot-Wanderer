@@ -4,7 +4,8 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    sendEmailVerification
+    sendEmailVerification,
+    updateProfile
 } from "firebase/auth";
 import { auth } from "../firebase";
 import { sendWelcomeBackEmail } from "../services/emailService";
@@ -25,8 +26,9 @@ export const AuthProvider = ({ children }) => {
         return () => unsubscribe();
     }, []);
 
-    const signup = async (email, password) => {
+    const signup = async (name, email, password) => {
         const result = await createUserWithEmailAndPassword(auth, email, password);
+        await updateProfile(result.user, { displayName: name });
         await sendEmailVerification(result.user);
         return result.user;
     };
@@ -37,7 +39,6 @@ export const AuthProvider = ({ children }) => {
             await sendWelcomeBackEmail(result.user.email);
         } catch (err) {
             console.log("Welcome email failed to send:", err);
-            // don't block login if the email fails
         }
         return result.user;
     };
