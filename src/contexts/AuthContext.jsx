@@ -31,6 +31,9 @@ export const AuthProvider = ({ children }) => {
         await updateProfile(result.user, { displayName: name });
         await sendEmailVerification(result.user);
         return result.user;
+        // Manually refresh local user state with the updated profile
+    setUser({ ...result.user, displayName: name });
+
     };
 
     const login = async (email, password) => {
@@ -40,6 +43,7 @@ export const AuthProvider = ({ children }) => {
         } catch (err) {
             console.log("Welcome email failed to send:", err);
         }
+        setUser(result.user); // ensure state is fresh
         return result.user;
     };
 
