@@ -79,6 +79,14 @@
   }
 
   .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     padding: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .movies-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -49,61 +49,40 @@
 
 @media (max-width: 768px) {
   .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
     padding: 1rem;
   }
 
   .nav-brand a {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .navbar-links {
-    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   .nav-link {
-    padding: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
   }
-}
-.user-account {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
 
-.user-name {
-  font-family: 'Nunito Sans', sans-serif;
-  color: white;
-  font-size: 0.95rem;
-}
+  .login-btn,
+  .logout-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+  }
 
-.login-btn,
-.logout-btn {
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 600;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.2s;
-}
+  .user-account {
+    gap: 0.5rem;
+  }
 
-.login-btn {
-  background: linear-gradient(135deg, #e50914, #b0060f);
-  color: white;
-}
-
-.login-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(229, 9, 20, 0.4);
-}
-
-.logout-btn {
-  background: rgba(255,255,255,0.08);
-  color: #ccc;
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-.logout-btn:hover {
-  background: rgba(255,255,255,0.15);
-  color: white;
+  .user-name {
+    font-size: 0.85rem;
+  }
 }
